@@ -5,5 +5,6 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Museum style-reference asset (kept local, not part of the app source)
+# Style-reference assets (kept local, not part of the app source)
 TRU-tijdlijn-digi-7680x2160.jpg
+Duolingo-new-learning-path-gold-523x1024.webp
