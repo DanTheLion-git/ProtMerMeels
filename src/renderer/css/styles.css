@@ -71,41 +71,46 @@ body.has-bg { background-size: cover; background-position: center; }
 
 .menu-body { flex: 1; display: flex; gap: clamp(20px, 2.5vw, 48px); min-height: 0; }
 
+/* Cards keep a FIXED gap between them; any extra width becomes left/right margin
+   (justify-content: center). Each card is the 1080×720 (3:2) artwork. */
 .menu-grid {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: clamp(16px, 2vw, 32px);
+  grid-template-columns: repeat(2, auto);
+  gap: clamp(18px, 1.8vw, 32px);
+  justify-content: center;
+  align-content: center;
   min-height: 0;
 }
 
 .subject-panel {
-  display: flex; flex-direction: column;
+  position: relative;
+  height: min(34vh, 408px);      /* ~85% — keeps clear of the title and hint */
+  aspect-ratio: 3 / 2;            /* 1080 × 720 */
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  overflow: hidden; cursor: pointer; text-align: left;
+  overflow: hidden; cursor: pointer;
   box-shadow: var(--shadow);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
   font: inherit; color: inherit;
 }
 .subject-panel:active { transform: scale(0.985); box-shadow: var(--shadow-s); }
-.panel__hero {
-  flex: 1; min-height: 0; position: relative;
-  background: linear-gradient(150deg, var(--purple), var(--purple-d));
+.panel__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.panel__title {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: clamp(14px, 1.4vw, 22px) clamp(18px, 1.8vw, 28px);
+  font-size: clamp(20px, 1.9vw, 30px); font-weight: 800; color: #fff;
+  background: linear-gradient(transparent, rgba(74, 59, 115, 0.82));
 }
-.panel__img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.panel__foot {
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  padding: clamp(12px, 1.4vw, 22px) clamp(16px, 1.8vw, 28px);
-  background: var(--white);
-}
-.panel__title { font-size: clamp(18px, 1.9vw, 28px); font-weight: 800; color: var(--ink); }
 .panel__score {
-  flex: 0 0 auto; font-size: clamp(13px, 1.3vw, 18px); font-weight: 800; color: var(--gold);
-  white-space: nowrap;
+  position: absolute; top: 14px; right: 14px;
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--purple-dd); color: #fff;
+  font-size: clamp(15px, 1.3vw, 20px); font-weight: 800;
+  padding: 8px 16px; border-radius: 999px; box-shadow: var(--shadow-s);
 }
+.panel__score-star { color: var(--gold); }
 
 .mascot {
   flex: 0 0 22%; min-width: 220px;
@@ -136,24 +141,44 @@ body.has-bg { background-size: cover; background-position: center; }
 .subject-head__title { font-size: clamp(26px, 3vw, 42px); font-weight: 800; color: var(--purple-dd); }
 
 .subject-body { flex: 1; display: flex; gap: clamp(20px, 2.5vw, 44px); min-height: 0; }
-.lesson-list {
-  flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 1.6vw, 24px);
-  align-content: start; overflow-y: auto;
+
+/* Duolingo-style winding lesson path: nodes snake left↔right down a centre guide. */
+.lesson-path-wrap { flex: 1; min-height: 0; overflow-y: auto; display: flex; justify-content: center; }
+.lesson-path {
+  position: relative;
+  display: flex; flex-direction: column; align-items: center;
+  gap: clamp(18px, 3vh, 44px);
+  padding: 24px 0 40px;
 }
-.lesson-card {
-  display: flex; align-items: center; gap: 18px;
-  min-height: var(--tap); padding: 18px 22px;
-  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-  box-shadow: var(--shadow-s); cursor: pointer; font: inherit; color: inherit; text-align: left;
+.lesson-path::before {
+  content: ""; position: absolute; top: 40px; bottom: 40px; left: 50%;
+  width: 4px; transform: translateX(-50%);
+  background: repeating-linear-gradient(var(--line) 0 10px, transparent 10px 22px);
 }
-.lesson-card:active { transform: translateY(2px); }
-.lesson-card__num {
-  flex: 0 0 auto; width: 52px; height: 52px; border-radius: 50%;
-  display: grid; place-items: center; font-size: 22px; font-weight: 800; color: #fff;
+.path-node {
+  position: relative; z-index: 1;
+  transform: translateX(var(--off, 0));
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  background: none; border: none; cursor: pointer; font: inherit; color: inherit;
+  transition: transform 0.12s ease;
+}
+.path-node:active { transform: translateX(var(--off, 0)) scale(0.92); }
+.path-node__circle {
+  width: clamp(84px, 9vh, 124px); height: clamp(84px, 9vh, 124px);
+  border-radius: 50%; display: grid; place-items: center;
+  font-size: clamp(28px, 3.2vh, 42px); font-weight: 800; color: #fff;
   background: linear-gradient(160deg, var(--purple), var(--purple-d));
+  box-shadow: 0 8px 0 var(--purple-dd), var(--shadow);
 }
-.lesson-card.is-done .lesson-card__num { background: linear-gradient(160deg, var(--go), var(--go-d)); }
-.lesson-card__title { font-size: clamp(17px, 1.7vw, 23px); font-weight: 700; }
+.path-node.is-done .path-node__circle {
+  background: linear-gradient(160deg, var(--go), var(--go-d));
+  box-shadow: 0 8px 0 var(--go-d), var(--shadow);
+}
+.path-node__label {
+  font-size: clamp(14px, 1.5vw, 19px); font-weight: 700; color: var(--ink-soft);
+  background: var(--white); padding: 4px 14px; border-radius: 999px;
+  max-width: 240px; text-align: center;
+}
 
 .subject-aside { flex: 0 0 34%; min-width: 300px; }
 

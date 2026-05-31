@@ -117,10 +117,10 @@ replace them with the real artwork at the same paths/sizes:
 
 | File | Size | Used for |
 |---|---|---|
-| `assets/img/subjects/greetings.png` | 600×600 | subject hero (home panel) |
-| `assets/img/subjects/mouillering.png` | 600×600 | subject hero |
-| `assets/img/subjects/family.png` | 600×600 | subject hero |
-| `assets/img/subjects/village.png` | 600×600 | subject hero |
+| `assets/img/subjects/greetings.png` | 1080×720 (3:2) | subject card (home panel); mostly white with a drawing — title + score overlay on top |
+| `assets/img/subjects/mouillering.png` | 1080×720 | subject card |
+| `assets/img/subjects/family.png` | 1080×720 | subject card |
+| `assets/img/subjects/village.png` | 1080×720 | subject card |
 | `assets/img/turfsteker.png` | 720×1500 | the **Turfsteker** mascot (right of the menu) |
 | `assets/img/background.png` *(optional)* | full-screen | menu background; if absent, the background is white (house style) |
 

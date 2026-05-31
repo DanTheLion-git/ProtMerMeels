@@ -1,14 +1,11 @@
 # Mééls — controlelijst voor de moedertaalspreker
 
-Alle vertalingen hieronder zijn **voorstellen** en staan in de app gemarkeerd als
-`status: "review"`. Een Meijelse moedertaalspreker controleert elke regel, vult de
-juiste Méélse vorm in, en zet dan in `content/course.json` de `status` op `"approved"`.
-Daarna kan de audio worden opgenomen (zie `README.md`).
+Alle vertalingen zijn **voorstellen** (status `review`). Een Meijelse moedertaalspreker
+controleert elke regel en zet daarna in `content/course.json` de `status` op `approved`.
+Woorden die in het Mééls exact gelijk zijn aan het Nederlands zijn bewust weggelaten.
 
-- 🟢 **Gedocumenteerd** — overgenomen van protmermeels.nl / medelo.nl (mouillering). Vrij zeker, graag bevestigen.
-- 🟡 **Best-effort** — beredeneerd op basis van Limburgse/Méélse patronen. Controleer extra zorgvuldig.
-
-Kolommen: **id** · **Nederlands** · **Mééls (voorstel)** · **bron** · **✔/✘** · **correctie / opmerking**
+- 🟢 **Gedocumenteerd** (protmermeels.nl / medelo.nl, mouillering) — vrij zeker.
+- 🟡 **Best-effort** — controleer extra zorgvuldig.
 
 ## Goojendaag — begroeten
 
@@ -17,15 +14,15 @@ Kolommen: **id** · **Nederlands** · **Mééls (voorstel)** · **bron** · **�
 | goedendag | goedendag | goojendaag | 🟡 |  |  |
 | goedemorgen | goedemorgen | goojemèrge | 🟡 |  |  |
 | goedenavond | goedenavond | goojenaovend | 🟡 |  |  |
-| welkom | welkom | welkom | 🟡 |  |  |
+| goedenacht | goedenacht | goojenach | 🟡 |  |  |
 | danke | bedankt | danke | 🟡 |  |  |
 | alstublieft | alstublieft | asjeblief | 🟡 |  |  |
 | tot-ziens | tot ziens | haije | 🟡 |  | Limburgse afscheidsgroet; controleer Méélse vorm |
 | ja | ja | jao | 🟡 |  |  |
 | nee | nee | nei | 🟡 |  |  |
-| proost | proost | proost | 🟡 |  |  |
 | dank-u-wel | dank u wel | dank ow wel | 🟡 |  | zin voor de woordbank |
 | hoe-gaat-het | hoe gaat het | wie geit 't | 🟡 |  | zin voor de woordbank |
+| tot-morgen | tot morgen | tot mèrge | 🟡 |  | zin voor de woordbank |
 
 ## De Méélse -j (mouillering)
 
@@ -53,7 +50,7 @@ Kolommen: **id** · **Nederlands** · **Mééls (voorstel)** · **bron** · **�
 | id | Nederlands | Mééls (voorstel) | bron | ✔/✘ | opmerking |
 |---|---|---|---|---|---|
 | moeder | moeder | moder | 🟡 |  |  |
-| vader | vader | vader | 🟡 |  |  |
+| oom | oom | oëm | 🟡 |  |  |
 | kind | kind | kindj | 🟡 |  | Limburgse mouillering nd→ndj; controleer |
 | jongen | jongen | jong | 🟡 |  |  |
 | buurman | buurman | naober | 🟡 |  |  |
@@ -71,21 +68,22 @@ Kolommen: **id** · **Nederlands** · **Mééls (voorstel)** · **bron** · **�
 |---|---|---|---|---|---|
 | straat | straat | straot | 🟡 |  |  |
 | kerk | kerk | kèrk | 🟡 |  |  |
-| school | school | school | 🟡 |  |  |
+| cafe | café | kefee | 🟡 |  |  |
 | dorp | dorp | dörp | 🟡 |  |  |
 | brood | brood | broed | 🟡 |  |  |
-| water | water | water | 🟡 |  |  |
-| koffie | koffie | koffie | 🟡 |  |  |
 | bier | bier | beer | 🟡 |  |  |
+| thee | thee | tee | 🟡 |  |  |
+| melk | melk | mèlk | 🟡 |  |  |
 | boom | boom | boum | 🟡 |  |  |
 | turf | turf | törf | 🟡 |  | törf — de Turfsteker steekt törf in de Peel |
 | veld | veld | veldj | 🟡 |  |  |
 | hond | hond | hóndj | 🟡 |  |  |
-| kat | kat | kat | 🟡 |  |  |
-| melk | melk | mèlk | 🟡 |  |  |
+| koe | koe | kou | 🟡 |  |  |
+| paard | paard | paerd | 🟡 |  |  |
+| kip | kip | kiep | 🟡 |  |  |
 
 ---
 
 ## Meerkeuze-afleiders
 
-Bij meerkeuzevragen tonen we naast het juiste woord twee **gelijkende echte** woorden en één **geloofwaardig FOUT** woord (veld `near` in `course.json`). De mouillering-oefening gebruikt het veld `distractors` (bevat o.a. de gewone Nederlandse vorm). Pas deze gerust aan als een fout alternatief niet logisch is.
+Naast het juiste woord tonen meerkeuzevragen twee **gelijkende echte** woorden en één **geloofwaardig FOUT** woord (veld `near`). De mouillering-oefening gebruikt `distractors` (incl. de gewone Nederlandse vorm).

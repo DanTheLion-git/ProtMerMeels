@@ -39,25 +39,26 @@ export function renderHome(root, ctx) {
 }
 
 function renderPanel(unit, ctx) {
-  const top = best(unit.id);
-  const hero = el('div', { class: 'panel__hero' });
+  const top = best(unit.id); // 0 when there is no score yet
+  const kids = [];
   if (unit.image) {
-    hero.appendChild(el('img', {
+    kids.push(el('img', {
       class: 'panel__img',
       src: ASSET_IMG + unit.image,
       alt: '',
       onerror: function () { this.remove(); }
     }));
   }
+  // Top-score badge, top-right of the (mostly white) artwork.
+  kids.push(el('span', { class: 'panel__score' }, [
+    el('span', { class: 'panel__score-star' }, '★'),
+    el('span', {}, String(top))
+  ]));
+  // Title overlaid on the bottom of the artwork.
+  kids.push(el('span', { class: 'panel__title' }, unit.title));
 
   return el('button', {
     class: 'subject-panel',
     onclick: () => ctx.navigate('subject', { unitId: unit.id })
-  }, [
-    hero,
-    el('div', { class: 'panel__foot' }, [
-      el('span', { class: 'panel__title' }, unit.title),
-      el('span', { class: 'panel__score' }, top > 0 ? '★ ' + top : 'nog geen topscore')
-    ])
-  ]);
+  }, kids);
 }
