@@ -1,0 +1,48 @@
+{
+  "name": "protmermeels",
+  "productName": "Pròt mèr Mééls",
+  "version": "0.1.0",
+  "description": "Touch-table trainer that teaches the Mééls (Meijel) dialect, Dutch → Mééls. Built for the Medelo Museum in Meijel.",
+  "author": "The Lions Alliance",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "kiosk": "electron . --kiosk",
+    "build:win": "electron-packager . ProtMerMeels --platform=win32 --arch=x64 --out=release --overwrite --ignore=release --ignore=\"\\.md$\"",
+    "dist": "electron-builder --win --x64"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.0.0",
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.thelionsalliance.protmermeels",
+    "productName": "ProtMerMeels",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "src/**/*",
+      "content/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "ProtMerMeels-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "ProtMerMeels.exe"
+    }
+  }
+}

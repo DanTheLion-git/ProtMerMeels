@@ -1,0 +1,9 @@
+node_modules/
+release/
+dist/
+*.log
+.DS_Store
+Thumbs.db
+
+# Museum style-reference asset (kept local, not part of the app source)
+TRU-tijdlijn-digi-7680x2160.jpg
