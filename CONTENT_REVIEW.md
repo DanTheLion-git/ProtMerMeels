@@ -4,7 +4,7 @@ Alle vertalingen zijn **voorstellen** (status `review`). Een Meijelse moedertaal
 controleert elke regel en zet daarna in `content/course.json` de `status` op `approved`.
 Woorden die in het Mééls exact gelijk zijn aan het Nederlands zijn bewust weggelaten.
 
-- 🟢 **Gedocumenteerd** (protmermeels.nl / medelo.nl, mouillering) — vrij zeker.
+- 🟢 **Gedocumenteerd** (protmermeels.nl / medelo.nl: mouillering + klinkerveranderingen) — vrij zeker.
 - 🟡 **Best-effort** — controleer extra zorgvuldig.
 
 ## Goojendaag — begroeten
@@ -24,26 +24,26 @@ Woorden die in het Mééls exact gelijk zijn aan het Nederlands zijn bewust wegg
 | hoe-gaat-het | hoe gaat het | wie geit 't | 🟡 |  | zin voor de woordbank |
 | tot-morgen | tot morgen | tot mèrge | 🟡 |  | zin voor de woordbank |
 
-## De Méélse -j (mouillering)
+## Méélse klanken
 
 | id | Nederlands | Mééls (voorstel) | bron | ✔/✘ | opmerking |
 |---|---|---|---|---|---|
-| huis | huis | husj | 🟢 |  | mouillering |
-| geit | geit | géétj | 🟢 |  | mouillering |
-| tijd | tijd | titj | 🟢 |  | mouillering |
-| buiten | buiten | butje | 🟢 |  | mouillering |
-| muis | muis | meusj | 🟢 |  | mouillering |
-| wijn | wijn | winj | 🟢 |  | mouillering |
-| prijs | prijs | prisj | 🟢 |  | mouillering |
-| bruin | bruin | brunj | 🟢 |  | mouillering |
-| kwijt | kwijt | kwitj | 🟢 |  | mouillering |
-| ruiten | ruiten | rutje | 🟢 |  | mouillering |
-| grijs | grijs | grisj | 🟢 |  | mouillering |
-| pijn | pijn | pinj | 🟢 |  | mouillering |
-| wijs | wijs | wisj | 🟢 |  | mouillering |
-| meid | meid | métj | 🟢 |  | mouillering |
-| luis | luis | leusj | 🟢 |  | mouillering |
-| buis | buis | beusj | 🟢 |  | mouillering |
+| tijd | tijd | titj | 🟢 |  | mouillering ij |
+| wijn | wijn | winj | 🟢 |  | mouillering ij |
+| prijs | prijs | prisj | 🟢 |  | mouillering ij |
+| kwijt | kwijt | kwitj | 🟢 |  | mouillering ij |
+| huis | huis | husj | 🟢 |  | mouillering ui |
+| buiten | buiten | butje | 🟢 |  | mouillering ui |
+| muis | muis | meusj | 🟢 |  | mouillering ui |
+| luis | luis | leusj | 🟢 |  | mouillering ui |
+| hemel | hemel | himmel | 🟢 |  | korte klinker |
+| lepel | lepel | lippel | 🟢 |  | korte klinker |
+| staart | staart | start | 🟢 |  | korte klinker |
+| gebleven | gebleven | geblivve | 🟢 |  | korte klinker |
+| kar | kar | kaar | 🟢 |  | lange klinker |
+| hand | hand | haant | 🟢 |  | lange klinker |
+| kom | kom | koom | 🟢 |  | lange klinker |
+| tak | tak | taak | 🟡 |  | lange klinker |
 
 ## Femilie en mènse
 
@@ -86,4 +86,4 @@ Woorden die in het Mééls exact gelijk zijn aan het Nederlands zijn bewust wegg
 
 ## Meerkeuze-afleiders
 
-Naast het juiste woord tonen meerkeuzevragen twee **gelijkende echte** woorden en één **geloofwaardig FOUT** woord (veld `near`). De mouillering-oefening gebruikt `distractors` (incl. de gewone Nederlandse vorm).
+Naast het juiste woord tonen meerkeuzevragen twee **gelijkende echte** woorden en één **geloofwaardig FOUT** woord (veld `near`). De klank-oefeningen (mouillering / klinkers) gebruiken `distractors` (incl. de gewone Nederlandse vorm).

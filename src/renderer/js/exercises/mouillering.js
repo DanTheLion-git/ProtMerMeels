@@ -35,6 +35,7 @@ export function mountMouillering(stage, item, api) {
       el('div', { class: 'prompt__word' }, item.prompt.nl)
     ])
   );
-  stage.appendChild(el('p', { class: 'mouillering-hint' }, 'Let op de Méélse mouillering — de -j na ei / ij / ui'));
+  const hint = item.hint || 'Let op de Méélse mouillering — de -j na ei / ij / ui';
+  stage.appendChild(el('p', { class: 'mouillering-hint' }, hint));
   stage.appendChild(grid);
 }

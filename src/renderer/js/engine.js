@@ -123,5 +123,5 @@ function buildMouillering(spec, pool) {
     wrong = wrong.concat(others);
   }
   const options = shuffle([entry.meels, ...wrong.slice(0, OPTION_COUNT - 1)]);
-  return { type: 'mouillering', prompt: entry, answer: entry.meels, options };
+  return { type: 'mouillering', prompt: entry, answer: entry.meels, options, hint: spec.hint || null };
 }

@@ -51,9 +51,12 @@ museum PC and run **`ProtMerMeels.exe`** (launches fullscreen kiosk).
 | Subject | Teaches |
 |---|---|
 | **Goojendaag — begroeten** | Greetings & courtesy |
-| **De Méélse -j (mouillering)** | The signature feature: the *-j* after *ei/ij/ui* (*husj*, *titj*, *géétj*) — all 16 documented forms |
+| **Méélse klanken** | Mééls sound-changes: mouillering (the *-j* after *ij/ui*: *husj*, *titj*) **plus** vowel shortening (*hemel→himmel*) and lengthening (*kar→kaar*) |
 | **Femilie en mènse** | Family & people |
 | **In ’t dörp** | Village & everyday life |
+
+The subject screen shows the four lessons as a winding path of square image cards
+joined by a dashed bezier curve.
 
 **Exercise types** (all tap-only — no keyboard needed): multiple choice, match pairs,
 listen-and-pick, word bank, and the mouillering spelling picker. Because Mééls is close
@@ -121,6 +124,7 @@ replace them with the real artwork at the same paths/sizes:
 | `assets/img/subjects/mouillering.png` | 1080×720 | subject card |
 | `assets/img/subjects/family.png` | 1080×720 | subject card |
 | `assets/img/subjects/village.png` | 1080×720 | subject card |
+| `assets/img/lessons/<lessonId>.png` | 480×480 (square) | the lesson card on the subject path (16 of them, e.g. `moui-1.png`) |
 | `assets/img/turfsteker.png` | 720×1500 | the **Turfsteker** mascot (right of the menu) |
 | `assets/img/background.png` *(optional)* | full-screen | menu background; if absent, the background is white (house style) |
 

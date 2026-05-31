@@ -20,22 +20,32 @@
     "hoe-gaat-het":{ "nl": "hoe gaat het","meels": "wie geit 't", "audio": null, "status": "review", "distractors": ["det"], "note": "zin voor de woordbank" },
     "tot-morgen":  { "nl": "tot morgen",  "meels": "tot mèrge",  "audio": null, "status": "review", "distractors": ["good"], "note": "zin voor de woordbank" },
 
-    "huis":   { "nl": "huis",   "meels": "husj",  "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["huis", "husje", "huusj"] },
-    "geit":   { "nl": "geit",   "meels": "géétj", "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["geit", "geitj", "gèèt"] },
-    "tijd":   { "nl": "tijd",   "meels": "titj",  "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["tijd", "tijdj", "tietj"] },
-    "buiten": { "nl": "buiten", "meels": "butje", "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["buiten", "buitje", "buutje"] },
-    "muis":   { "nl": "muis",   "meels": "meusj", "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["muis", "muisj", "meus"] },
-    "wijn":   { "nl": "wijn",   "meels": "winj",  "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["wijn", "wijnj", "wien"] },
-    "prijs":  { "nl": "prijs",  "meels": "prisj", "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["prijs", "prijsj", "pries"] },
-    "bruin":  { "nl": "bruin",  "meels": "brunj", "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["bruin", "bruinj", "broen"] },
-    "kwijt":  { "nl": "kwijt",  "meels": "kwitj", "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["kwijt", "kwijtj", "kwietj"] },
-    "ruiten": { "nl": "ruiten", "meels": "rutje", "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["ruiten", "ruitje", "ruutje"] },
-    "grijs":  { "nl": "grijs",  "meels": "grisj", "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["grijs", "grijsj", "gries"] },
-    "pijn":   { "nl": "pijn",   "meels": "pinj",  "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["pijn", "pijnj", "pien"] },
-    "wijs":   { "nl": "wijs",   "meels": "wisj",  "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["wijs", "wijsj", "wies"] },
-    "meid":   { "nl": "meid",   "meels": "métj",  "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["meid", "meidj", "mèèt"] },
-    "luis":   { "nl": "luis",   "meels": "leusj", "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["luis", "luisj", "leus"] },
-    "buis":   { "nl": "buis",   "meels": "beusj", "audio": null, "status": "review", "note": "mouillering (gedocumenteerd)", "distractors": ["buis", "buisj", "beus"] },
+    "huis":   { "nl": "huis",   "meels": "husj",  "audio": null, "status": "review", "note": "mouillering ui (gedocumenteerd)", "distractors": ["huis", "husje", "huusj"] },
+    "buiten": { "nl": "buiten", "meels": "butje", "audio": null, "status": "review", "note": "mouillering ui (gedocumenteerd)", "distractors": ["buiten", "buitje", "buutje"] },
+    "muis":   { "nl": "muis",   "meels": "meusj", "audio": null, "status": "review", "note": "mouillering ui (gedocumenteerd)", "distractors": ["muis", "muisj", "meus"] },
+    "luis":   { "nl": "luis",   "meels": "leusj", "audio": null, "status": "review", "note": "mouillering ui (gedocumenteerd)", "distractors": ["luis", "luisj", "leus"] },
+    "buis":   { "nl": "buis",   "meels": "beusj", "audio": null, "status": "review", "note": "mouillering ui (gedocumenteerd)", "distractors": ["buis", "buisj", "beus"] },
+    "bruin":  { "nl": "bruin",  "meels": "brunj", "audio": null, "status": "review", "note": "mouillering ui (gedocumenteerd)", "distractors": ["bruin", "bruinj", "broen"] },
+    "ruiten": { "nl": "ruiten", "meels": "rutje", "audio": null, "status": "review", "note": "mouillering ui (gedocumenteerd)", "distractors": ["ruiten", "ruitje", "ruutje"] },
+
+    "tijd":   { "nl": "tijd",   "meels": "titj",  "audio": null, "status": "review", "note": "mouillering ij (gedocumenteerd)", "distractors": ["tijd", "tijdj", "tietj"] },
+    "wijn":   { "nl": "wijn",   "meels": "winj",  "audio": null, "status": "review", "note": "mouillering ij (gedocumenteerd)", "distractors": ["wijn", "wijnj", "wien"] },
+    "prijs":  { "nl": "prijs",  "meels": "prisj", "audio": null, "status": "review", "note": "mouillering ij (gedocumenteerd)", "distractors": ["prijs", "prijsj", "pries"] },
+    "kwijt":  { "nl": "kwijt",  "meels": "kwitj", "audio": null, "status": "review", "note": "mouillering ij (gedocumenteerd)", "distractors": ["kwijt", "kwijtj", "kwietj"] },
+    "pijn":   { "nl": "pijn",   "meels": "pinj",  "audio": null, "status": "review", "note": "mouillering ij (gedocumenteerd)", "distractors": ["pijn", "pijnj", "pien"] },
+    "grijs":  { "nl": "grijs",  "meels": "grisj", "audio": null, "status": "review", "note": "mouillering ij (gedocumenteerd)", "distractors": ["grijs", "grijsj", "gries"] },
+    "wijs":   { "nl": "wijs",   "meels": "wisj",  "audio": null, "status": "review", "note": "mouillering ij (gedocumenteerd)", "distractors": ["wijs", "wijsj", "wies"] },
+    "geit":   { "nl": "geit",   "meels": "géétj", "audio": null, "status": "review", "note": "mouillering ei (gedocumenteerd)", "distractors": ["geit", "geitj", "gèèt"] },
+    "meid":   { "nl": "meid",   "meels": "métj",  "audio": null, "status": "review", "note": "mouillering ei (gedocumenteerd)", "distractors": ["meid", "meidj", "mèèt"] },
+
+    "hemel":    { "nl": "hemel",    "meels": "himmel",   "audio": null, "status": "review", "note": "korte klinker (gedocumenteerd)", "distractors": ["hemel", "himel", "hemmel"] },
+    "lepel":    { "nl": "lepel",    "meels": "lippel",   "audio": null, "status": "review", "note": "korte klinker (gedocumenteerd)", "distractors": ["lepel", "lipel", "leppel"] },
+    "staart":   { "nl": "staart",   "meels": "start",    "audio": null, "status": "review", "note": "korte klinker (gedocumenteerd)", "distractors": ["staart", "staert", "sjtart"] },
+    "gebleven": { "nl": "gebleven", "meels": "geblivve", "audio": null, "status": "review", "note": "korte klinker (gedocumenteerd)", "distractors": ["gebleven", "geblieve", "gebleve"] },
+    "kar":      { "nl": "kar",      "meels": "kaar",     "audio": null, "status": "review", "note": "lange klinker (gedocumenteerd)", "distractors": ["kar", "kaer", "kaor"] },
+    "hand":     { "nl": "hand",     "meels": "haant",    "audio": null, "status": "review", "note": "lange klinker (gedocumenteerd)", "distractors": ["hand", "haand", "hant"] },
+    "kom":      { "nl": "kom",      "meels": "koom",     "audio": null, "status": "review", "note": "lange klinker (gedocumenteerd)", "distractors": ["kom", "koam", "kohm"] },
+    "tak":      { "nl": "tak",      "meels": "taak",     "audio": null, "status": "review", "note": "lange klinker (best-effort)", "distractors": ["tak", "taok", "taek"] },
 
     "moeder":  { "nl": "moeder",  "meels": "moder",  "audio": null, "status": "review", "near": ["moeder"] },
     "kind":    { "nl": "kind",    "meels": "kindj",  "audio": null, "status": "review", "near": ["kiendj"], "note": "Limburgse mouillering nd→ndj; controleer" },
@@ -73,25 +83,25 @@
       "title": "Goojendaag — begroeten",
       "image": "subjects/greetings.png",
       "lessons": [
-        { "id": "greet-1", "title": "Begroeten", "exercises": [
+        { "id": "greet-1", "title": "Begroeten", "image": "lessons/greet-1.png", "exercises": [
           { "type": "multipleChoice", "vocab": "goedendag", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "goedemorgen", "direction": "nl2meels" },
           { "type": "matchPairs", "vocab": ["goedendag", "goedemorgen", "goedenavond", "goedenacht"] },
           { "type": "listen", "vocab": "goedendag" }
         ] },
-        { "id": "greet-2", "title": "Beleefd zijn", "exercises": [
+        { "id": "greet-2", "title": "Beleefd zijn", "image": "lessons/greet-2.png", "exercises": [
           { "type": "multipleChoice", "vocab": "danke", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "alstublieft", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "tot-ziens", "direction": "meels2nl" },
           { "type": "matchPairs", "vocab": ["danke", "alstublieft", "tot-ziens", "goedenavond"] }
         ] },
-        { "id": "greet-3", "title": "Ja en nee", "exercises": [
+        { "id": "greet-3", "title": "Ja en nee", "image": "lessons/greet-3.png", "exercises": [
           { "type": "multipleChoice", "vocab": "ja", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "nee", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "goedenacht", "direction": "nl2meels" },
           { "type": "matchPairs", "vocab": ["ja", "nee", "danke", "alstublieft"] }
         ] },
-        { "id": "greet-4", "title": "Hele zinnen", "exercises": [
+        { "id": "greet-4", "title": "Hele zinnen", "image": "lessons/greet-4.png", "exercises": [
           { "type": "wordBank", "vocab": "dank-u-wel" },
           { "type": "wordBank", "vocab": "hoe-gaat-het" },
           { "type": "wordBank", "vocab": "tot-morgen" },
@@ -102,33 +112,32 @@
 
     {
       "id": "mouillering",
-      "title": "De Méélse -j (mouillering)",
+      "title": "Méélse klanken",
       "image": "subjects/mouillering.png",
       "lessons": [
-        { "id": "moui-1", "title": "De -j (deel 1)", "exercises": [
-          { "type": "mouillering", "vocab": "huis" },
-          { "type": "mouillering", "vocab": "geit" },
-          { "type": "mouillering", "vocab": "tijd" },
-          { "type": "matchPairs", "vocab": ["huis", "geit", "tijd", "buiten"] }
+        { "id": "moui-1", "title": "De -j na de ij", "image": "lessons/moui-1.png", "exercises": [
+          { "type": "mouillering", "vocab": "tijd", "hint": "Let op de mouillering: een -j ná de ij" },
+          { "type": "mouillering", "vocab": "wijn", "hint": "Let op de mouillering: een -j ná de ij" },
+          { "type": "mouillering", "vocab": "prijs", "hint": "Let op de mouillering: een -j ná de ij" },
+          { "type": "matchPairs", "vocab": ["tijd", "wijn", "prijs", "kwijt"] }
         ] },
-        { "id": "moui-2", "title": "De -j (deel 2)", "exercises": [
-          { "type": "mouillering", "vocab": "muis" },
-          { "type": "mouillering", "vocab": "wijn" },
-          { "type": "mouillering", "vocab": "prijs" },
-          { "type": "matchPairs", "vocab": ["muis", "wijn", "prijs", "bruin"] }
+        { "id": "moui-2", "title": "De -j na de ui", "image": "lessons/moui-2.png", "exercises": [
+          { "type": "mouillering", "vocab": "huis", "hint": "Let op de mouillering: een -j ná de ui" },
+          { "type": "mouillering", "vocab": "buiten", "hint": "Let op de mouillering: een -j ná de ui" },
+          { "type": "mouillering", "vocab": "muis", "hint": "Let op de mouillering: een -j ná de ui" },
+          { "type": "matchPairs", "vocab": ["huis", "buiten", "muis", "luis"] }
         ] },
-        { "id": "moui-3", "title": "De -j (deel 3)", "exercises": [
-          { "type": "mouillering", "vocab": "kwijt" },
-          { "type": "mouillering", "vocab": "ruiten" },
-          { "type": "mouillering", "vocab": "grijs" },
-          { "type": "matchPairs", "vocab": ["kwijt", "ruiten", "grijs", "pijn"] }
+        { "id": "moui-3", "title": "Korte klinkers", "image": "lessons/moui-3.png", "exercises": [
+          { "type": "mouillering", "vocab": "hemel", "hint": "Let op: de klinker wordt korter in 't Mééls" },
+          { "type": "mouillering", "vocab": "lepel", "hint": "Let op: de klinker wordt korter in 't Mééls" },
+          { "type": "mouillering", "vocab": "staart", "hint": "Let op: de klinker wordt korter in 't Mééls" },
+          { "type": "matchPairs", "vocab": ["hemel", "lepel", "staart", "gebleven"] }
         ] },
-        { "id": "moui-4", "title": "De -j (deel 4)", "exercises": [
-          { "type": "mouillering", "vocab": "wijs" },
-          { "type": "mouillering", "vocab": "meid" },
-          { "type": "mouillering", "vocab": "luis" },
-          { "type": "mouillering", "vocab": "buis" },
-          { "type": "matchPairs", "vocab": ["wijs", "meid", "luis", "buis"] }
+        { "id": "moui-4", "title": "Lange klinkers", "image": "lessons/moui-4.png", "exercises": [
+          { "type": "mouillering", "vocab": "kar", "hint": "Let op: de klinker wordt langer in 't Mééls" },
+          { "type": "mouillering", "vocab": "hand", "hint": "Let op: de klinker wordt langer in 't Mééls" },
+          { "type": "mouillering", "vocab": "kom", "hint": "Let op: de klinker wordt langer in 't Mééls" },
+          { "type": "matchPairs", "vocab": ["kar", "hand", "kom", "tak"] }
         ] }
       ]
     },
@@ -138,26 +147,26 @@
       "title": "Femilie en mènse",
       "image": "subjects/family.png",
       "lessons": [
-        { "id": "fam-1", "title": "Femilie", "exercises": [
+        { "id": "fam-1", "title": "Femilie", "image": "lessons/fam-1.png", "exercises": [
           { "type": "multipleChoice", "vocab": "moeder", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "oom", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "kind", "direction": "nl2meels" },
           { "type": "matchPairs", "vocab": ["moeder", "oom", "kind", "jongen"] },
           { "type": "listen", "vocab": "moeder" }
         ] },
-        { "id": "fam-2", "title": "Mènse rondom", "exercises": [
+        { "id": "fam-2", "title": "Mènse rondom", "image": "lessons/fam-2.png", "exercises": [
           { "type": "multipleChoice", "vocab": "buurman", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "vriend", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "meisje", "direction": "meels2nl" },
           { "type": "matchPairs", "vocab": ["buurman", "vriend", "meisje", "jongen"] }
         ] },
-        { "id": "fam-3", "title": "Groot en klein", "exercises": [
+        { "id": "fam-3", "title": "Groot en klein", "image": "lessons/fam-3.png", "exercises": [
           { "type": "multipleChoice", "vocab": "oma", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "opa", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "broer", "direction": "nl2meels" },
           { "type": "matchPairs", "vocab": ["oma", "opa", "broer", "zus"] }
         ] },
-        { "id": "fam-4", "title": "Bij mekaar", "exercises": [
+        { "id": "fam-4", "title": "Bij mekaar", "image": "lessons/fam-4.png", "exercises": [
           { "type": "multipleChoice", "vocab": "zus", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "femilie", "direction": "nl2meels" },
           { "type": "matchPairs", "vocab": ["oma", "opa", "broer", "zus"] },
@@ -171,27 +180,27 @@
       "title": "In ’t dörp",
       "image": "subjects/village.png",
       "lessons": [
-        { "id": "vil-1", "title": "Door ’t dörp", "exercises": [
+        { "id": "vil-1", "title": "Door ’t dörp", "image": "lessons/vil-1.png", "exercises": [
           { "type": "multipleChoice", "vocab": "straat", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "kerk", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "cafe", "direction": "nl2meels" },
           { "type": "matchPairs", "vocab": ["straat", "kerk", "cafe", "dorp"] },
           { "type": "listen", "vocab": "kerk" }
         ] },
-        { "id": "vil-2", "title": "Aete en drinke", "exercises": [
+        { "id": "vil-2", "title": "Aete en drinke", "image": "lessons/vil-2.png", "exercises": [
           { "type": "multipleChoice", "vocab": "brood", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "bier", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "thee", "direction": "meels2nl" },
           { "type": "multipleChoice", "vocab": "melk", "direction": "nl2meels" },
           { "type": "matchPairs", "vocab": ["brood", "bier", "thee", "melk"] }
         ] },
-        { "id": "vil-3", "title": "Buiten in de Peel", "exercises": [
+        { "id": "vil-3", "title": "Buiten in de Peel", "image": "lessons/vil-3.png", "exercises": [
           { "type": "multipleChoice", "vocab": "boom", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "turf", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "veld", "direction": "nl2meels" },
           { "type": "matchPairs", "vocab": ["boom", "turf", "veld", "dorp"] }
         ] },
-        { "id": "vil-4", "title": "Dieren", "exercises": [
+        { "id": "vil-4", "title": "Dieren", "image": "lessons/vil-4.png", "exercises": [
           { "type": "multipleChoice", "vocab": "hond", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "koe", "direction": "nl2meels" },
           { "type": "multipleChoice", "vocab": "paard", "direction": "nl2meels" },
