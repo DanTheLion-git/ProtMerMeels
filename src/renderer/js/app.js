@@ -92,10 +92,7 @@ function setupBackground() {
   ['background.png', 'background.jpg'].forEach((file) => {
     const img = new Image();
     img.onload = () => {
-      // Soft white veil over the photo so it reads as a subtle backdrop and the
-      // UI text stays legible on every screen. Lower the 0.80 to show more photo.
-      const veil = 'linear-gradient(rgba(255,255,255,0.80), rgba(255,255,255,0.80))';
-      document.body.style.backgroundImage = `${veil}, url("${ASSET_IMG + file}")`;
+      document.body.style.backgroundImage = `url("${ASSET_IMG + file}")`;
       document.body.classList.add('has-bg');
     };
     img.src = ASSET_IMG + file;

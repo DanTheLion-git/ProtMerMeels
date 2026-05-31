@@ -27,10 +27,7 @@ export function renderHome(root, ctx) {
     alt: 'Turfsteker',
     onerror: function () { this.style.display = 'none'; }
   });
-  const mascot = el('div', { class: 'mascot' }, [
-    mascotImg,
-    el('span', { class: 'mascot__name' }, 'Turfsteker')
-  ]);
+  const mascot = el('div', { class: 'mascot' }, [mascotImg]);
 
   const body = el('div', { class: 'menu-body' }, [grid, mascot]);
   const hint = el('p', { class: 'attract-hint' }, 'Raak een onderwerp aan om te beginnen');
