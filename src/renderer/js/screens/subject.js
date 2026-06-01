@@ -22,11 +22,8 @@ export function renderSubject(root, ctx, params) {
 
   const heading = el('div', { class: 'subject-head' }, [
     back,
-    unit.image
-      ? el('img', { class: 'subject-head__img', src: ASSET_IMG + unit.image, alt: '', onerror: function () { this.remove(); } })
-      : null,
     el('h1', { class: 'subject-head__title' }, unit.title)
-  ].filter(Boolean));
+  ]);
 
   const grid = el('div', { class: 'menu-grid' },
     lessons.map((lesson) => renderLessonPanel(lesson, ctx, unit.id)));
