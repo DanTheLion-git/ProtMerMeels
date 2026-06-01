@@ -1,14 +1,13 @@
 'use strict';
 
-// Subject screen: a Duolingo-style path of square lesson cards winding
-// left↔right down the screen, joined by a dashed bezier curve, alongside the
-// subject's top-5 leaderboard.
+// Subject screen: 4 lesson panels in a 2×2 grid, same layout as the home
+// subject menu. Each panel shows the lesson's artwork, best score badge, and
+// title. Done lessons get a green border + check mark.
 
 import { el, clear } from '../util.js';
-import { leaderboardEl } from '../leaderboard.js';
+import { best } from '../highscore.js';
 
 const ASSET_IMG = '../../assets/img/';
-const SVGNS = 'http://www.w3.org/2000/svg';
 
 export function renderSubject(root, ctx, params) {
   clear(root);
@@ -27,60 +26,39 @@ export function renderSubject(root, ctx, params) {
       ? el('img', { class: 'subject-head__img', src: ASSET_IMG + unit.image, alt: '', onerror: function () { this.remove(); } })
       : null,
     el('h1', { class: 'subject-head__title' }, unit.title)
-  ]);
+  ].filter(Boolean));
 
-  // node centres, in 0..100 space; winding left/right
-  const pts = lessons.map((_, i) => ({
-    x: i % 2 === 0 ? 28 : 72,
-    y: ((i + 0.5) / lessons.length) * 100
-  }));
+  const grid = el('div', { class: 'menu-grid' },
+    lessons.map((lesson) => renderLessonPanel(lesson, ctx, unit.id)));
 
-  const path = el('div', { class: 'lesson-path' });
-  path.appendChild(buildCurve(pts));
-  lessons.forEach((lesson, i) => path.appendChild(buildCard(lesson, pts[i], ctx, unit.id)));
-
-  const board = el('aside', { class: 'subject-aside' }, [leaderboardEl(unit.id, '')]);
-  const body = el('div', { class: 'subject-body' }, [
-    el('div', { class: 'lesson-path-wrap' }, [path]),
-    board
-  ]);
-  root.appendChild(el('div', { class: 'screen subject' }, [heading, body]));
+  root.appendChild(el('div', { class: 'screen subject' }, [heading, grid]));
 }
 
-function buildCard(lesson, pt, ctx, unitId) {
+function renderLessonPanel(lesson, ctx, unitId) {
   const done = ctx.session.completed.has(lesson.id);
+  const top = best(lesson.id);
   const kids = [];
+
   if (lesson.image) {
-    kids.push(el('img', { class: 'path-card__img', src: ASSET_IMG + lesson.image, alt: '', onerror: function () { this.remove(); } }));
+    kids.push(el('img', {
+      class: 'panel__img',
+      src: ASSET_IMG + lesson.image,
+      alt: '',
+      onerror: function () { this.remove(); }
+    }));
   }
-  if (done) kids.push(el('span', { class: 'path-card__check' }, '✓'));
-  kids.push(el('span', { class: 'path-card__title' }, lesson.title));
+
+  kids.push(el('span', { class: 'panel__score' }, [
+    el('span', { class: 'panel__score-star' }, '★'),
+    el('span', {}, String(top))
+  ]));
+
+  if (done) kids.push(el('span', { class: 'panel__check' }, '✓'));
+
+  kids.push(el('span', { class: 'panel__title' }, lesson.title));
 
   return el('button', {
-    class: 'path-card' + (done ? ' is-done' : ''),
-    style: `left:${pt.x}%; top:${pt.y}%`,
+    class: 'subject-panel' + (done ? ' is-done' : ''),
     onclick: () => ctx.navigate('lesson', { unitId, lessonId: lesson.id })
   }, kids);
-}
-
-// Dashed cubic-bezier S-curve through the node centres.
-function buildCurve(pts) {
-  const svg = document.createElementNS(SVGNS, 'svg');
-  svg.setAttribute('class', 'path-svg');
-  svg.setAttribute('viewBox', '0 0 100 100');
-  svg.setAttribute('preserveAspectRatio', 'none');
-
-  let d = '';
-  pts.forEach((p, i) => {
-    if (i === 0) { d += `M ${p.x} ${p.y}`; return; }
-    const prev = pts[i - 1];
-    const midY = (prev.y + p.y) / 2;
-    d += ` C ${prev.x} ${midY} ${p.x} ${midY} ${p.x} ${p.y}`;
-  });
-
-  const path = document.createElementNS(SVGNS, 'path');
-  path.setAttribute('class', 'path-curve');
-  path.setAttribute('d', d);
-  svg.appendChild(path);
-  return svg;
 }

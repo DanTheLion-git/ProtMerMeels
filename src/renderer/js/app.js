@@ -4,7 +4,7 @@
 // the hidden staff-exit gesture, and the dev review banner.
 
 import { loadCourse, getCourse, reviewCount } from './content.js';
-import { initIdle } from './idle.js';
+import { initIdle, pauseIdle, resumeIdle } from './idle.js';
 import { renderHome } from './screens/home.js';
 import { renderSubject } from './screens/subject.js';
 import { renderLesson } from './screens/lesson.js';
@@ -29,6 +29,8 @@ const router = {
     // force reflow so the enter animation replays on every navigation
     void appRoot.offsetWidth;
     appRoot.classList.add('is-entering');
+
+    if (screen === 'home') pauseIdle(); else resumeIdle();
 
     const ctx = { navigate: router.navigate, session, course: getCourse() };
     switch (screen) {

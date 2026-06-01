@@ -14,8 +14,9 @@ export function renderComplete(root, ctx, params) {
   clear(root);
 
   const unit = (ctx.course.units || []).find((u) => u.id === params.unitId);
-  const unitTitle = unit ? unit.title : '';
-  const rank = qualifies(params.unitId, params.score); // -1 if not top-5
+  const lesson = unit && (unit.lessons || []).find((l) => l.id === params.lessonId);
+  const lessonTitle = lesson ? lesson.title : (unit ? unit.title : '');
+  const rank = qualifies(params.lessonId, params.score); // -1 if not top-5
   let savedIndex = -1;
 
   const confetti = el('div', { class: 'confetti' });
@@ -65,7 +66,7 @@ export function renderComplete(root, ctx, params) {
       kids.push(el('p', { class: 'complete-sub complete-sub--win' }, '🏆 Je staat in de top 5! Voer je initialen in:'));
       kids.push(buildKeypad());
     } else {
-      kids.push(leaderboardEl(params.unitId, unitTitle));
+      kids.push(leaderboardEl(params.lessonId, lessonTitle));
       kids.push(actions());
     }
     kids.forEach((k) => card.appendChild(k));
@@ -99,7 +100,7 @@ export function renderComplete(root, ctx, params) {
 
     function confirm() {
       if (entry.length < 3) return;
-      const top = add(params.unitId, { name: entry, score: params.score, acc: params.acc, ms: params.ms });
+      const top = add(params.lessonId, { name: entry, score: params.score, acc: params.acc, ms: params.ms });
       savedIndex = top.findIndex((e) => e.name === entry.toUpperCase() && e.score === params.score);
       renderBoardView();
     }
@@ -112,7 +113,7 @@ export function renderComplete(root, ctx, params) {
     clear(card);
     card.appendChild(el('div', { class: 'complete-badge' }, '🏆'));
     card.appendChild(el('h1', { class: 'complete-title' }, 'In de top 5!'));
-    card.appendChild(leaderboardEl(params.unitId, unitTitle, { highlightIndex: savedIndex }));
+    card.appendChild(leaderboardEl(params.lessonId, lessonTitle, { highlightIndex: savedIndex }));
     card.appendChild(actions());
   }
 

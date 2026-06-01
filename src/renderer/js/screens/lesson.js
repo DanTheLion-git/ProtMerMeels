@@ -11,11 +11,12 @@ import { mountExercise } from '../exercises/index.js';
 
 const PRAISE = ['Goed zo!', 'Knap!', 'Mooi!', 'Net!', 'Hèèl good!'];
 
-// speed: full marks at <=3s/question, decaying to 0.6 at >=12s/question.
-function speedFactor(avgSec) {
-  const f = 1.0 - ((avgSec - 3) / 9) * 0.4;
-  return Math.max(0.6, Math.min(1.0, f));
-}
+// Score: start at 800, lose 3 pts/sec and 30 pts per wrong tap. Floor at 50.
+// 800 is mathematically unreachable so there is always room to improve.
+const BASE_SCORE    = 800;
+const PTS_PER_SEC   = 3;
+const PTS_PER_WRONG = 30;
+const MIN_SCORE     = 50;
 
 export function renderLesson(root, ctx, params) {
   clear(root);
@@ -27,10 +28,11 @@ export function renderLesson(root, ctx, params) {
   const queue = buildLessonQueue(unit, lesson);
   let index = 0;
 
-  // per-question scoring state
-  let wrongCount = 0;
+  // scoring state
+  let wrongCount = 0;     // wrongs for the current question (reset each item)
+  let totalWrong = 0;     // total wrong taps across the whole lesson
+  let firstTryCorrect = 0; // questions answered right on the first attempt
   let itemStart = 0;
-  const perQ = [];        // accuracy score per question (0..1)
   let totalMs = 0;
 
   const progressFill = el('div', { class: 'progress__fill' });
@@ -52,11 +54,12 @@ export function renderLesson(root, ctx, params) {
   const api = {
     solved: () => {
       totalMs += performance.now() - itemStart;
-      perQ.push(wrongCount === 0 ? 1.0 : Math.max(0.2, 0.6 - 0.1 * wrongCount));
+      if (wrongCount === 0) firstTryCorrect++;
       showSuccessFooter();
     },
     wrong: () => {
       wrongCount++;
+      totalWrong++;
       flashWrong();
     }
   };
@@ -99,10 +102,10 @@ export function renderLesson(root, ctx, params) {
     progressFill.style.width = '100%';
     ctx.session.completed.add(lesson.id);
 
-    const n = perQ.length || 1;
-    const accuracy = perQ.reduce((a, b) => a + b, 0) / n;
-    const avgSec = totalMs / 1000 / n;
-    const score = Math.round(1000 * accuracy * speedFactor(avgSec));
+    const n = queue.length || 1;
+    const accuracy = firstTryCorrect / n;
+    const score = Math.max(MIN_SCORE,
+      BASE_SCORE - Math.round(totalMs / 1000 * PTS_PER_SEC) - totalWrong * PTS_PER_WRONG);
 
     const lessons = unit.lessons || [];
     const pos = lessons.indexOf(lesson);
@@ -110,6 +113,7 @@ export function renderLesson(root, ctx, params) {
 
     ctx.navigate('complete', {
       unitId: unit.id,
+      lessonId: lesson.id,
       score,
       acc: accuracy,
       ms: totalMs,

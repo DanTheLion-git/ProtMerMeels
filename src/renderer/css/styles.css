@@ -117,7 +117,7 @@ body.has-bg { background-size: cover; background-position: center; }
   position: absolute; left: 0; right: 0; bottom: 0;
   padding: 0.7rem 1.4rem;
   font-size: 1.5rem; font-weight: 800; color: #fff;
-  background: linear-gradient(transparent, rgba(74, 59, 115, 0.82));
+  background: var(--purple-dd);
 }
 .panel__score {
   position: absolute; top: 0.7rem; right: 0.7rem;
@@ -135,18 +135,9 @@ body.has-bg { background-size: cover; background-position: center; }
 }
 .mascot__img { width: 100%; height: 100%; object-fit: contain; object-position: bottom; }
 
-.attract-hint {
-  text-align: center; align-self: center;
-  color: var(--purple-d); font-size: 1.05rem; font-weight: 700;
-  background: var(--plate); -webkit-backdrop-filter: blur(0.5rem); backdrop-filter: blur(0.5rem);
-  padding: 0.5rem 1.4rem; border-radius: 999px;
-  animation: pulse 2.4s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
-
 /* ============================== SUBJECT ============================== */
 
-.subject { gap: clamp(0.9rem, 3vh, 1.7rem); }
+.subject { gap: clamp(0.9rem, 2.6vh, 1.8rem); }
 .subject-head { display: flex; align-items: center; gap: 0.9rem; }
 .subject-head__img { width: 3.2rem; height: 3.2rem; border-radius: 0.7rem; object-fit: cover; }
 .subject-head__title {
@@ -155,38 +146,13 @@ body.has-bg { background-size: cover; background-position: center; }
   padding: 0.3rem 1rem; border-radius: 0.8rem;
 }
 
-.subject-body { flex: 1; display: flex; gap: clamp(1rem, 2.5vw, 2.2rem); min-height: 0; }
-
-/* winding path: square cards joined by a dashed bezier */
-.lesson-path-wrap { flex: 1; min-height: 0; overflow-y: auto; }
-.lesson-path { position: relative; width: 100%; height: 100%; min-height: 35rem; }
-.path-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-.path-curve {
-  fill: none; stroke: var(--purple-dd); stroke-width: 3; opacity: 0.75;
-  stroke-dasharray: 7 9; stroke-linecap: round; vector-effect: non-scaling-stroke;
+/* lesson done-check badge (top-left of lesson panel) */
+.panel__check {
+  position: absolute; top: 0.7rem; left: 0.7rem; z-index: 2;
+  width: 1.9rem; height: 1.9rem; border-radius: 50%; display: grid; place-items: center;
+  background: var(--go); color: #fff; font-weight: 800; font-size: 0.9rem; box-shadow: var(--shadow-s);
 }
-.path-card {
-  position: absolute; transform: translate(-50%, -50%); z-index: 1; padding: 0;
-  width: 11vh; min-width: 7rem; aspect-ratio: 1;
-  background: var(--surface); border: 0.05rem solid var(--line); border-radius: var(--radius);
-  overflow: hidden; cursor: pointer; box-shadow: var(--shadow);
-  transition: transform 0.12s ease, box-shadow 0.12s ease; font: inherit; color: inherit;
-}
-.path-card:active { transform: translate(-50%, -50%) scale(0.95); box-shadow: var(--shadow-s); }
-.path-card.is-done { border-color: var(--go); }
-.path-card__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.path-card__title {
-  position: absolute; left: 0; right: 0; bottom: 0; padding: 0.5rem 0.6rem;
-  font-size: 0.9rem; font-weight: 800; color: #fff;
-  background: linear-gradient(transparent, rgba(74, 59, 115, 0.85));
-}
-.path-card__check {
-  position: absolute; top: 0.4rem; right: 0.4rem; z-index: 2;
-  width: 1.7rem; height: 1.7rem; border-radius: 50%; display: grid; place-items: center;
-  background: var(--go); color: #fff; font-weight: 800; box-shadow: var(--shadow-s);
-}
-
-.subject-aside { flex: 0 0 34%; min-width: 15rem; }
+.subject-panel.is-done { border-color: var(--go); }
 
 /* ============================== LEADERBOARD ============================== */
 
@@ -278,6 +244,7 @@ body.has-bg { background-size: cover; background-position: center; }
 .speaker--big { width: 3.2rem; height: 3.2rem; font-size: 1.4rem; }
 .speaker--xl  { width: 6rem; height: 6rem; font-size: 2.6rem; box-shadow: 0 0.35rem 0 var(--purple-dd), var(--shadow); }
 .speaker:active { transform: translateY(0.15rem); box-shadow: 0 0.05rem 0 var(--purple-dd); }
+@keyframes pulse { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
 .speaker.is-playing { animation: pulse 0.8s ease-in-out infinite; }
 
 .listen-head { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
@@ -425,7 +392,6 @@ body.has-bg { background-size: cover; background-position: center; }
 
 @media (max-width: 900px) {
   .options, .match { grid-template-columns: 1fr; }
-  .menu-body, .subject-body { flex-direction: column; }
+  .menu-body { flex-direction: column; }
   .mascot { flex-basis: 9rem; min-width: 0; }
-  .subject-aside { flex-basis: auto; min-width: 0; }
 }

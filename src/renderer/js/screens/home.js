@@ -5,7 +5,6 @@
 // mascot on the right.
 
 import { el, clear } from '../util.js';
-import { best } from '../highscore.js';
 
 const ASSET_IMG = '../../assets/img/';
 
@@ -30,13 +29,11 @@ export function renderHome(root, ctx) {
   const mascot = el('div', { class: 'mascot' }, [mascotImg]);
 
   const body = el('div', { class: 'menu-body' }, [grid, mascot]);
-  const hint = el('p', { class: 'attract-hint' }, 'Raak een onderwerp aan om te beginnen');
 
-  root.appendChild(el('div', { class: 'screen home' }, [title, body, hint]));
+  root.appendChild(el('div', { class: 'screen home' }, [title, body]));
 }
 
 function renderPanel(unit, ctx) {
-  const top = best(unit.id); // 0 when there is no score yet
   const kids = [];
   if (unit.image) {
     kids.push(el('img', {
@@ -46,12 +43,6 @@ function renderPanel(unit, ctx) {
       onerror: function () { this.remove(); }
     }));
   }
-  // Top-score badge, top-right of the (mostly white) artwork.
-  kids.push(el('span', { class: 'panel__score' }, [
-    el('span', { class: 'panel__score-star' }, '★'),
-    el('span', {}, String(top))
-  ]));
-  // Title overlaid on the bottom of the artwork.
   kids.push(el('span', { class: 'panel__title' }, unit.title));
 
   return el('button', {
