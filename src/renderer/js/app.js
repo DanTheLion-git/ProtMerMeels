@@ -68,7 +68,6 @@ async function boot() {
     return;
   }
 
-  setupExitGesture();
   setupReviewBanner();
   setupBackground();
   initIdle(IDLE_MS, resetToAttract);
@@ -99,22 +98,6 @@ function setupBackground() {
     };
     img.src = ASSET_IMG + file;
   });
-}
-
-// Hidden staff exit: press and hold the top-left corner for 3 seconds.
-function setupExitGesture() {
-  const hotspot = document.getElementById('exit-hotspot');
-  let held = null;
-  const start = () => {
-    held = setTimeout(() => window.kiosk && window.kiosk.quit(), 3000);
-  };
-  const cancel = () => {
-    clearTimeout(held);
-    held = null;
-  };
-  hotspot.addEventListener('pointerdown', start);
-  hotspot.addEventListener('pointerup', cancel);
-  hotspot.addEventListener('pointerleave', cancel);
 }
 
 // Dev-only: surface how many terms still need native-speaker review.

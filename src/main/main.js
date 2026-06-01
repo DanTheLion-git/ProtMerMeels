@@ -1,6 +1,6 @@
 'use strict';
 
-const { app, BrowserWindow, ipcMain, globalShortcut } = require('electron');
+const { app, BrowserWindow, globalShortcut } = require('electron');
 const path = require('path');
 
 // Kiosk mode is on automatically in a packaged build, or when --kiosk is passed.
@@ -84,11 +84,6 @@ function createWindow() {
   if (process.env.PMM_DEV_CLEAR) {
     wc.once('did-finish-load', () => wc.executeJavaScript('localStorage.clear();location.reload();'));
   }
-
-  // Hidden staff exit: the renderer detects the long-press-corner gesture and
-  // asks us to quit. Esc also quits, but only outside of kiosk to avoid visitors
-  // closing it; in kiosk the corner gesture is the supported way out.
-  ipcMain.on('app:quit', () => app.quit());
 
   // F11 toggles fullscreen for convenience during development.
   if (!KIOSK) {

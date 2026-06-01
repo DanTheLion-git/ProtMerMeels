@@ -390,7 +390,6 @@ body.has-bg { background-size: cover; background-position: center; }
 }
 .toast.is-shown { opacity: 0.97; transform: translate(-50%, 0); }
 
-.exit-hotspot { position: fixed; top: 0; left: 0; width: 4.5rem; height: 4.5rem; z-index: 99; }
 
 .review-banner {
   position: fixed; bottom: 0.5rem; right: 0.7rem; z-index: 60;
