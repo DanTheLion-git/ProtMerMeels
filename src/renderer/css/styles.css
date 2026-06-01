@@ -116,8 +116,10 @@ body.has-bg { background-size: cover; background-position: center; }
   grid-template-rows: 1fr var(--panel-title-h);
 }
 .subject-panel:active { transform: scale(0.985); box-shadow: var(--shadow-s); }
-/* Image is fully visible (contain) with white space on the sides */
-.panel__img { width: 100%; height: 100%; object-fit: contain; }
+/* Wrapper div is the grid item; its size is set by the grid row (not the img) */
+.panel__img-wrap { position: relative; overflow: hidden; min-height: 0; }
+/* Img is pinned inside the wrapper — object-fit:contain shows it in full */
+.panel__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .panel__title {
   padding: 0.7rem 1.4rem;
   font-size: 1.5rem; font-weight: 800; color: #fff;

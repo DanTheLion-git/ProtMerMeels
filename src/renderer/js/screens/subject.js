@@ -36,14 +36,16 @@ function renderLessonPanel(lesson, ctx, unitId) {
   const top = best(lesson.id);
   const kids = [];
 
+  const imgWrap = el('div', { class: 'panel__img-wrap' });
   if (lesson.image) {
-    kids.push(el('img', {
+    imgWrap.appendChild(el('img', {
       class: 'panel__img',
       src: ASSET_IMG + lesson.image,
       alt: '',
       onerror: function () { this.remove(); }
     }));
   }
+  kids.push(imgWrap);
 
   kids.push(el('span', { class: 'panel__score' }, [
     el('span', { class: 'panel__score-star' }, '★'),
