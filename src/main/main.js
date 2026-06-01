@@ -52,6 +52,7 @@ function createWindow() {
 
   const wc = mainWindow.webContents;
 
+
   // Forward renderer console + load failures to stdout so a kiosk leaves a log trail
   // (and so problems are visible when launched from a terminal).
   wc.on('console-message', (_e, level, message, line, source) => {

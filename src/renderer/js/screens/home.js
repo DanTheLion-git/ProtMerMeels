@@ -35,16 +35,10 @@ export function renderHome(root, ctx) {
 
 function renderPanel(unit, ctx) {
   const kids = [];
-  const imgWrap = el('div', { class: 'panel__img-wrap' });
-  if (unit.image) {
-    imgWrap.appendChild(el('img', {
-      class: 'panel__img',
-      src: ASSET_IMG + unit.image,
-      alt: '',
-      onerror: function () { this.remove(); }
-    }));
-  }
-  kids.push(imgWrap);
+  kids.push(el('div', {
+    class: 'panel__img-wrap',
+    style: unit.image ? `background-image:url("${ASSET_IMG + unit.image}")` : ''
+  }));
   kids.push(el('span', { class: 'panel__title' }, unit.title));
 
   return el('button', {
